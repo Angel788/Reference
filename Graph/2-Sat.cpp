@@ -1,9 +1,9 @@
 //Se usa para los problams en los cuales tengamos dos dosible variables
-struct two-sat{
+struct twoSat{
     int s;
     vector<vector<int>> g,gr;
     vector<int> visited,ids,topologic_sort,val;
-    two-sat(int n){
+    twoSat(int n){
         s=n;
         g.assign(n*2+1,vector<int>());
         gr.assign(n*2+1,vector<int>());
@@ -16,8 +16,8 @@ struct two-sat{
         gr[b].push_back(a);
     }
     void addOr(int a,bool ba,int b,bool bb){
-        addEdge(a+(ba?s:0),b+(bb?s:0));
-        addEdge(b+(bb?s:0),a+(ba?s:0));
+        addEdge(a+(ba?s:0),b+(bb?0:s));
+        addEdge(b+(bb?s:0),a+(ba?0:s));
     }
     void addXor(int a,bool ba,int b,bool bb){
         addOr(a,ba,b,bb);
@@ -39,14 +39,14 @@ struct two-sat{
         for(int node:gr[u])dfsr(node,id);
     }
     bool algo(){
-        for(int i=1;i<=s*2;i++) if(visited[i]==0) dfs(i);
+        for(int i=0;i<s*2;i++) if(visited[i]==0) dfs(i);
         fill(visited.begin(),visited.end(),0);
         reverse(topologic_sort.begin(),topologic_sort.end());
         int id=0;
         for(int i=0;i<topologic_sort.size();i++){
             if(visited[topologic_sort[i]]==0)dfsr(topologic_sort[i],id++);
         }
-        for(int i=1;i<=s;i++){
+        for(int i=0;i<s;i++){
             if(ids[i]==ids[i+s]) return false;
             val[i]=(ids[i]>ids[i+s]?0:1);
         }
