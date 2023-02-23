@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
+//O(N) for find all the primes in the given range
 bool is_compositive[10000000+1];
 vector<int>primes;
 void sieve(int n){
@@ -13,7 +12,7 @@ void sieve(int n){
     }
    } 
 }
-int main(){
+
     int n;cin>>n;
     sieve(n);
     cout<<primes.size()<<endl;
