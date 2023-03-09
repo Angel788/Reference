@@ -13,7 +13,7 @@ struct dinics{
         index.resize(n+1);
         adj.resize(n+1);
     } 
-    void addEdge(int u,ll f){
+    void addEdge(int u,,int v,ll f){
         edge.push_back({u,f,0});
         adj[u].push_back(m)
         edge.push_back({v,f,0});
