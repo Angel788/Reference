@@ -1,10 +1,10 @@
-//For get the k-th atecesor of a node in a tree
+//For get the k-th atecesor of a node in a tree 1 indexed
 vector<int> *T;
 vector<vector<int>>up;
 vector<int>deep;
 int lg;
 void init(int n){
-    lg=ceil(log2(n));
+    lg=ceil(log2(n))+1;
     T=new vector<int>[n+1];
     up.assign(n+1,vector<int>(lg+1,1));
     deep.assign(n+1,0);
