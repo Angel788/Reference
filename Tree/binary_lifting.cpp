@@ -6,7 +6,7 @@ int lg;
 void init(int n){
     lg=ceil(log2(n));
     T=new vector<int>[n+1];
-    up.assign(n+1,vector<int>(lg+1,0));
+    up.assign(n+1,vector<int>(lg+1,1));
     deep.assign(n+1,0);
 }
 void dfs(int node){
