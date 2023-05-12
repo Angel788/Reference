@@ -19,9 +19,9 @@ int query(int l, int r, int a, int b, int i){
     int m=l+r>>1;
     return query(l,m,a,b,2*i+1)+query(m+1,r,a,b,2*i+2);
 }
-// indexado en 0 (i==0 en llamada de función)
+// indexado en 0 (i==0 en llamada de funcion)
 // l=0, r=n-1
-// Si requieres que los nodos del st estén en 0, no es necesario la función build
+// Si requieres que los nodos del st esten en 0, no es necesario la funcion build
 // build(0,n-1,0); 
 // update(0,n-1, indice, valor, 0);
 // query(0,n-1, 0, 0, 0);
