@@ -34,8 +34,8 @@ struct Kosaraju{
         for(int i=0;i<topologic_sort.size();i++){
             if(visited[topologic_sort[i]]==0)dfsr(topologic_sort[i],id++);
         } 
-    }
+    }// Es el ago principal
     int search(int node){
         return ids[node];
-    }
+    }// Retorana el componente que esta el nodo
 };

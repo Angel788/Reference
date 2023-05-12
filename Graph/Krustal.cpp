@@ -8,6 +8,7 @@ int krustal(){
     for(int i=0;i<m;i++){
         int c,a,b;
         tie(c,a,b)=edges[i];
+        // Si en el disjoin set estan conectados retorna false
         if(unionDs(a,b)==false) continue;
         else res+=c;
     }
